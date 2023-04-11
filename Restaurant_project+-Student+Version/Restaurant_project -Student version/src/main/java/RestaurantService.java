@@ -30,9 +30,11 @@ public class RestaurantService {
     public List<Restaurant> getRestaurants() {
         return restaurants;
     }
-
-    //Adding method signature as per TDD approach for calculating total cost
     public int getOrderCost(List<Item> selectedItems) {
-        return 0;
+        int totalOrderCost = 0;
+        for(Item i: selectedItems) {
+            totalOrderCost = totalOrderCost + i.getPrice();
+        }
+        return totalOrderCost;
     }
 }
